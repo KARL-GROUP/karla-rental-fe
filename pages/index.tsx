@@ -3,13 +3,23 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Navbar from '@/components/layout/Navbar'
+import Hero from '@/components/sections/Hero'
+import Services from '@/components/sections/Services'
+import CustomerFavs from '@/components/sections/CustomerFavs'
+import HowItWorks from '@/components/sections/HowItWorks'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
     <>
-      <Navbar />
+      <section className='bg-[#F5F5F5]'>
+        <Navbar />
+        <Hero />
+        <Services />
+        <CustomerFavs />
+        <HowItWorks />
+      </section>
     </>
   )
 }
