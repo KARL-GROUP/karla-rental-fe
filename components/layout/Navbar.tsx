@@ -9,21 +9,18 @@ const Navbar = () => {
         },
 
         {
-            text: "See all cars",
+            text: "Our fleet",
+            path: "/getAll"
+        },
+        {
+            text: "Terms and conditions",
             path: ""
         },
         {
-            text: "About us",
+            text: "Contact Us",
             path: ""
         },
-        {
-            text: "Contact",
-            path: ""
-        },
-        {
-            text: "Rent now",
-            path: ""
-        },
+
     ]
 
     const router = useRouter()
