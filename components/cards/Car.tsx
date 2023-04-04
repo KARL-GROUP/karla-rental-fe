@@ -19,9 +19,7 @@ const Car = ({ name, price, title, image, suv, automatic, seats }: Props) => {
                 <p className="font-bold text-primary-blue text-[18px]">{price}<span className="text-black font-normal">/day</span></p>
             </div>
             <p className="text-[#939393] text-[16px]">{title}</p>
-            <div className="relative w-[100%] h-[25vh]">
-                <Image src={image} alt="car" layout="fill" className="absolute" />
-            </div>
+                <img src={image} alt="car"  />
             <div className="flex justify-between py-3">
                 <div className="flex items-center gap-2">
                     <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">

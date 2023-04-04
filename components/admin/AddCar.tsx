@@ -1,7 +1,8 @@
-import { addCarFunc } from '@/utils/functions';
-import { FormEvent, useState , useEffect} from 'react';
+import { addCarFunc, editCarFunc } from '@/utils/functions';
+import { FormEvent, useState, useEffect } from 'react';
 import Select from 'react-select'
 import getUserToken from '@/utils/getUserToken';
+import carCover from '@/utils/carCover';
 
 interface CarFormValues {
   brand: string;
@@ -27,11 +28,15 @@ const initialFormValues: CarFormValues = {
 
 const AddCar = () => {
 
+  const [chooseCoverImage, setChooseCoverImage] = useState(false)
+  const [allCarImages, setAllCarImages] = useState<any>()
+  const [carDetails, setCarDetails] = useState<any>()
   const [token, setToken] = useState("")
+  const [id, setId] = useState()
 
   useEffect(() => {
     return setToken(getUserToken());
-}, [])
+  }, [])
 
   const options = [
     { value: 'chocolate', label: 'Chocolate' },
@@ -66,14 +71,19 @@ const AddCar = () => {
     const response = await addCarFunc('cars', formData, {
       authorization: "Bearer " + token,
     })
-    .then((res) => {
+      .then((res) => {
         console.log("Response", res);
-    }).catch((error) => {
+        setCarDetails(res)
+        setChooseCoverImage(true)
+        setId(res.data.data.car.id)
+        setAllCarImages(res.data.data.car.carImages)
+        console.log("details", carDetails)
+      }).catch((error) => {
         console.log("error", error)
         // toast.error(error.response?.data?.message)
-    })
+      })
 
-   
+
   }
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -88,6 +98,19 @@ const AddCar = () => {
     setCarImages(files);
   };
 
+
+  const handleSetCoverCarImage = async (index: number, url: any, public_id: any) => {
+    console.log("index", index)
+    console.log("url", url)
+    console.log("id", id)
+    const res = await editCarFunc(`cars/${id}`, {
+      coverImage
+        : {url,public_id}
+    }, {
+      authorization: "Bearer " + token,
+    })
+
+  }
   const [show, setShow] = useState(true)
   return (
     <>
@@ -106,14 +129,49 @@ const AddCar = () => {
         <div className='flex justify-between gap-4'>
           <input className='w-1/2' placeholder='Price' type="text" name="price" value={formValues.price} onChange={handleInputChange} />
           <input className='w-1/2' placeholder='Number of seats' type="number" name="seats" value={formValues.seats} onChange={handleInputChange} />
-        </div>
+        </div>  {/* {allCarImages ? allCarImages.map((carImage: any, index: number) => {
+          return(    {carDetails ? carDetails.map((car: any, index: number)=> {
+          console.log("cars", car)
+          return(
+            <div>
+              </div>
+
+          )
+        }) : ("")}
+<img key={index} src={carImage.url} onClick={() => handleSetCoverCarImage(index, carImage.url)} />
+          )
+        }): ("")}  */}
         <div className='flex justify-between gap-4'>
           <input className='w-1/2' placeholder='year' type="number" name="year" value={formValues.year} onChange={handleInputChange} />
           <input className='w-1/2' placeholder='type' type="text" name="type" value={formValues.type} onChange={handleInputChange} />
         </div>
-        <input className='border bg-white border-gray-300 py-3 px-5 outline-none rounded' placeholder='Seelct images' type="file" name="carImages" onChange={handleFileInputChange} multiple />
+        <input className='border  {/* {allCarImages ? allCarImages.map((carImage: any, index: number) => {
+          return(    {carDetails ? carDetails.map((car: any, index: number)=> {
+          console.log("cars", car)
+          return(
+            <div>
+              </div>
+
+          )
+        }) : ("")}
+<img key={index} src={carImage.url} onClick={() => handleSetCoverCarImage(index, carImage.url)} />
+          )
+        }): ("")}  */} bg-white border-gray-300 py-3 px-5 outline-none rounded' placeholder='Seelct images' type="file" name="carImages" onChange={handleFileInputChange} multiple />
         <button type="submit" >Add new car</button>
       </form>
+
+      {chooseCoverImage && <div>
+        <h1 className='text-6xl'>Working</h1>\
+
+        {/* {carDetails} */}
+        {allCarImages ? allCarImages.map((carImage: any, index: number) => {
+          return (
+            <img key={index} src={carImage.url} onClick={() => handleSetCoverCarImage(index, carImage.url, carImage.public_id)} />
+          )
+        }) : ("")}
+
+
+      </div>}
     </>
   );
 }

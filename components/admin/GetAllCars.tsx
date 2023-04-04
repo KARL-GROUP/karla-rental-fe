@@ -13,21 +13,20 @@ import SectionWrapper from "../wrappers/SectionWrapper";
 const GetAllCars = () => {
 
 
-    // const [cars, setCars] = useState([])
-    // useEffect(() => {
-    //     const getCars = async () => {
-    //         try {
-    //             const res = await getCarsFunc("posts");
-    //             setCars(res.data)
-
-    //         } catch (error) {
-    //             console.log(error);
-    //         }
-    //     };
-    //     getCars();
-    // }, []);
+    const [cars, setCars] = useState([])
+    useEffect(() => {
+        const getCars = async () => {
+            try {
+                const res = await getCarsFunc("cars");
+                setCars(res.data.data.cars)
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        getCars();
+    }, []);
     const [currentPage, setCurrentPage] = useState(1);
-    const pageSize = 9;
+    const pageSize = 12;
     const onPageChange = (page: any) => {
         setCurrentPage(page);
     };
@@ -38,12 +37,13 @@ const GetAllCars = () => {
         <Navbar />
         <SectionWrapper>
         <Filter />
-        <section className="grid grid-cols-3 gap-x-20 gap-y-10 py-10 px-20">
+        <section className="grid grid-cols-4 gap-x-3 gap-y-10 py-10 px-10">
             {paginatedPosts ? (
                 paginatedPosts.map((car: any, index: number) => {
+                    console.log("car", car)
                     return (
                         <div key={index} className="">
-                            <Car name={car.name} price={car.price} title={""} image={car.image} suv={car.suv} automatic={car.transmission} seats={car.seats} />
+                            <Car name={car.name} price={car.price} title={""} image={car.coverImage.url} suv={car.suv} automatic={car.transmission} seats={car.seats} />
                             {/* <div>
                             {car.carImages.map((carImage : any, index: number) => {
                                 return(

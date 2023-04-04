@@ -1,8 +1,10 @@
 import axios from "axios";
 
 export const paginate = (items: any, pageNumber: any, pageSize: any) => {
+  console.log("items", items)
     const startIndex = (pageNumber - 1) * pageSize;
-    return items.slice(startIndex, startIndex + pageSize);
+    // return items.slice(startIndex, startIndex + pageSize);
+    return items
    };
 
 
@@ -33,7 +35,23 @@ export async function adminLoginFunc(endpoint : string, body :any)  {
   
   
 export async function getCarsFunc(endpoint : string)  {
-    let response = await axios.get(`https://jsonplaceholder.typicode.com/${endpoint}`);
+    let response = await axios.get(`https://karla-rental-be-development.up.railway.app/api/${endpoint}`);
     return response;
   
   }
+
+
+  export async function editCarFunc(
+    endpoint: string,
+    body: any,
+    headers : any
+  ) {
+    let response = await axios.put(
+      `https://karla-rental-be-development.up.railway.app/api/${endpoint}`, body, {
+        headers,
+      }
+    );
+    return response;
+  }
+
+  

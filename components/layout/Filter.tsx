@@ -4,7 +4,7 @@ const Filter = () => {
 
 
 const carType = [
-  { value: 'chocolate', label: 'Chocolate' },
+  { value: 'chocolate', label: 'ChocolateChocolate' },
   { value: 'strawberry', label: 'Strawberry' },
   { value: 'vanilla', label: 'Vanilla' }
 ]
@@ -27,7 +27,7 @@ const carBrand = [
     { value: 'vanilla', label: 'Vanilla' }
   ]
     return ( 
-        <section className='flex items-center gap-10 pt-32 px-20'>
+        <section className='flex items-center gap-10 pt-32 px-10'>
 
             <div className='flex gap-10'>
             <Select options={carType} placeholder="Car type"/>
