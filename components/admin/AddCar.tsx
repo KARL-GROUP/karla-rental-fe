@@ -26,8 +26,7 @@ const initialFormValues: CarFormValues = {
   seats: '',
 };
 
-const AddCar = () => {
-
+const AddCar = ({toEdit} : any) => {
   const [chooseCoverImage, setChooseCoverImage] = useState(false)
   const [allCarImages, setAllCarImages] = useState<any>()
   const [carDetails, setCarDetails] = useState<any>()
@@ -100,9 +99,6 @@ const AddCar = () => {
 
 
   const handleSetCoverCarImage = async (index: number, url: any, public_id: any) => {
-    console.log("index", index)
-    console.log("url", url)
-    console.log("id", id)
     const res = await editCarFunc(`cars/${id}`, {
       coverImage
         : {url,public_id}
@@ -111,6 +107,8 @@ const AddCar = () => {
     })
 
   }
+
+ 
   const [show, setShow] = useState(true)
   return (
     <>

@@ -43,8 +43,8 @@ const GetAllCars = () => {
                 paginatedPosts.map((car: any, index: number) => {
                     console.log("car", car)
                     return (
-                        <Link href="/car" key={index} className="">
-                            <Car name={car.name} price={car.price} title={""} image={car.coverImage.url} suv={car.suv} automatic={car.transmission} seats={car.seats} />
+                        <Link href={`/car/${car.id}`} key={index} className="">
+                            <Car name={car.brand} price={car.price} title={""} image={car.coverImage.url} suv={car.suv} automatic={car.transmission} seats={car.seats} />
                             {/* <div>
                             {car.carImages.map((carImage : any, index: number) => {
                                 return(

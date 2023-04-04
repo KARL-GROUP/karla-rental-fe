@@ -40,6 +40,12 @@ export async function getCarsFunc(endpoint : string)  {
   
   }
 
+  export async function getOneCarsFunc(endpoint : string)  {
+    let response = await axios.get(`https://karla-rental-be-development.up.railway.app/api/${endpoint}`);
+    return response;
+  
+  }
+
 
   export async function editCarFunc(
     endpoint: string,
