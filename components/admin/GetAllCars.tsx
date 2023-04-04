@@ -10,6 +10,7 @@ import Car from "../cards/Car";
 import Filter from "../layout/Filter";
 import Navbar from "../layout/Navbar";
 import SectionWrapper from "../wrappers/SectionWrapper";
+import Link from "next/link";
 const GetAllCars = () => {
 
 
@@ -42,7 +43,7 @@ const GetAllCars = () => {
                 paginatedPosts.map((car: any, index: number) => {
                     console.log("car", car)
                     return (
-                        <div key={index} className="">
+                        <Link href="/car" key={index} className="">
                             <Car name={car.name} price={car.price} title={""} image={car.coverImage.url} suv={car.suv} automatic={car.transmission} seats={car.seats} />
                             {/* <div>
                             {car.carImages.map((carImage : any, index: number) => {
@@ -53,7 +54,7 @@ const GetAllCars = () => {
                                 )
                             })}
                         </div> */}
-                        </div>
+                        </Link>
                     )
                 })
             ) : ("")}
