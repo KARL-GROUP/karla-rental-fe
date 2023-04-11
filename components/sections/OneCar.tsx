@@ -14,6 +14,7 @@ const OneCar = () => {
     const [car, setCar] = useState<any>()
     const [toEdit, setToEdit] = useState<any>()
     const [isEditing, setIsEditing] = useState(false)
+    const [isOrdering, setIsOrdering] = useState(false)
     useEffect(() => {
         const getCar = async () => {
             try {
@@ -32,6 +33,10 @@ const OneCar = () => {
         console.log("test", selected)
         setIsEditing(true)
         setToEdit(selected)
+    }
+
+    const handleBook = (id: any) => {
+        console.log("id", id)
     }
 
     return (
@@ -91,7 +96,7 @@ const OneCar = () => {
                                         <p>Seats: <span className="text-[#242424] ml-1">{car.seats}</span></p>
                                     </div>
                                 </div>
-                                <Button text="Book online" className="bg-primary-blue text-white w-48" />
+                                <Button text="Book online" className="bg-primary-blue text-white w-48" onClick={() =>handleBook(car.id)} />
                                 <div className="flex gap-10">
                                     <div className="flex gap-2 items-center">
                                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -7,6 +7,7 @@ import Services from '@/components/sections/Services'
 import CustomerFavs from '@/components/sections/CustomerFavs'
 import HowItWorks from '@/components/sections/HowItWorks'
 import Testimonies from '@/components/sections/CustomerExperience'
+import Footer from '@/components/layout/Footer'
 
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
         <CustomerFavs />
         <HowItWorks />
         <Testimonies />
+        <Footer />
       </section>
     </>
   )
