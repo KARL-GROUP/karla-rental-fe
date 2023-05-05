@@ -14,13 +14,13 @@ export default function Home() {
   return (
     <>
       <section className='bg-[#F5F5F5]'>
-        <Navbar />
-        <Hero />
+        {/* <Navbar /> */}
+        {/* <Hero /> */}
         <Services />
         <CustomerFavs />
         <HowItWorks />
-        <Testimonies />
-        <Footer />
+        {/* <Testimonies /> */}
+        {/* <Footer /> */}
       </section>
     </>
   )

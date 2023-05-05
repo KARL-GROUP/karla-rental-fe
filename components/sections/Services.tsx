@@ -49,16 +49,16 @@ const Services = () => {
         
     ]
     return (
-        <section className="services w-full h-[300px] mt-28 mb-44 relative">
-            <div className="bg-black/10 absolute top-0 left-0 h-full w-full">
+        <section className="services w-full lg:h-[300px] mt-28 lg:mb-44 relative">
+            <div className="bg-black/10 lg:absolute top-0 left-0 h-full w-full">
 
             </div>
             <SectionWrapper>
                 <section className="relative flex flex-col py-16 gap-5">
                 <h3 className="text-white font-bold text-2xl text-center">Our services</h3>
                 <p className="text-primary-gray text-[18px] text-center">Additional related services offered</p>
-                <div className="absolute  px-10">
-                <div className="grid grid-cols-3 gap-40 relative top-36">
+                <div className="lg:absolute px-4 mt-10">
+                <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-40 gap-10 lg:relative lg:top-36">
                     {services.map((service, index) => {
                         return (
                             <Service key={index} icon={service.icon} title={service.title} description={service.description} />

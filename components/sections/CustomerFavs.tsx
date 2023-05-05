@@ -40,7 +40,7 @@ const CustomerFavs = () => {
         <SectionWrapper>
             <h3 className="font-bold text-[24px] text-center mt-16">Customer favorites</h3>
             <p className="text-primary-text text-[18px] text-center mt-5">A few picks from previous customers’ liking</p>
-            <section className="grid grid-cols-3 gap-16 mt-10 px-16">
+            <section className="grid grid-cols-1 lg:grid-cols-3 gap-16 mt-10 lg:px-16">
                 {custFav.map((fav, index) => {
                     return(
                         <Car name={fav.name} price={fav.price} title={fav.title} image={fav.image} suv={fav.suv} automatic={fav.automatic} seats={fav.seats} />
