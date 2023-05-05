@@ -19,8 +19,8 @@ export default function Home() {
         <Services />
         <CustomerFavs />
         <HowItWorks />
-        {/* <Testimonies /> */}
-        {/* <Footer /> */}
+        <Testimonies />
+        <Footer />
       </section>
     </>
   )

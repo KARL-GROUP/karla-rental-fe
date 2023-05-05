@@ -28,7 +28,7 @@ const Testimonies = () => {
                 <p className="">What people say about us
                    </p>
             </div>
-            <section className="mt-10 grid grid-cols-3 gap-10 px-28">
+            <section className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-10 lg:px-28">
             {testimonies.map((test, index) => {
                 return(
                     <Testimony key={index} index={index} name={test.person} testimony={test.message} />
