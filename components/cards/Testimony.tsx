@@ -8,7 +8,7 @@ interface Props {
 
 const Testimony = ({ testimony, name, index }: Props) => {
     return (
-        <div className={` ${index === 1 ? "bg-white shadow-xl" : " bg-stone-50  "} px-10 pt-5 rounded-xl flex flex-col gap-5 relative`}>
+        <div className={` ${index === 1 ? "bg-white shadow-xl" : " bg-stone-50  "} px-10 md:px-4 pt-5 rounded-xl flex flex-col gap-5 relative`}>
             <div className="flex justify-between  px-10">
                 <svg width="30" height="30" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_65_141)">

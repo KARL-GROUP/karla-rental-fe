@@ -8,7 +8,7 @@ const Footer = () => {
 
             </div>
             <div className="mx-auto max-w-[70rem]">
-            <div className="flex flex-col lg:flex-row justify-between ">
+            <div className="flex flex-col md:flex-row justify-between ">
                 <div className="flex flex-col gap-4">
                     <h1 className="uppercase font-bold text-primary-blue text-3xl">karl <span className="text-white">Rental</span></h1>
                     <div className="flex gap-5">
@@ -73,7 +73,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className="flex flex-col lg:flex-row gap-10 text-white mt-10 ">
+            <div className="flex flex-col md:flex-row gap-10 text-white mt-10 ">
                 <p>Any queries or requests? contact us</p>
                 <p className="flex items-center gap-2"><svg width="30" height="30" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_211_406)">

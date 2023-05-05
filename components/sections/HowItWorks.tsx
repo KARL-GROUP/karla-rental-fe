@@ -18,7 +18,7 @@ const HowItWorks = () => {
                 </span></p>
             </div>
 
-            <section className="flex justify-between lg:px-20 grid grid-cols-1 lg:grid-cols-3">
+            <section className="flex justify-between lg:px-20 grid grid-cols-1 md:grid-cols-3">
                 <div className="w-[290px] mt-5 px-[40px] flex flex-col gap-3 items-center justify-center">
                     <div className="w-[50px] h-[50px] rounded-full bg-primary-blue grid place-content-center">
                         <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -37,7 +37,7 @@ const HowItWorks = () => {
                     <p className="text-[18px] text-primary-text">Browse through different available cars and choose the one that fits your needs</p>
                 </div>
 
-                <div className="lg:mt-44 mt-5 w-[290px] px-[40px] flex flex-col gap-3 items-center justify-center">
+                <div className="md:mt-44 mt-5 w-[290px] px-[40px] flex flex-col gap-3 items-center justify-center">
                     <div className="w-[50px] h-[50px] rounded-full bg-primary-blue grid place-content-center">
                         <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_51_811)">
