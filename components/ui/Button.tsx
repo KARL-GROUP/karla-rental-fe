@@ -6,7 +6,7 @@ interface Props{
 
 const Button = ({text, className, onClick}: Props) => {
     return ( 
-        <button className={`${className}  font-medium  px-10 py-3 rounded text-xl`} onClick={onClick}>{text}</button>
+        <button className={`${className}  font-medium  px-8 py-4 rounded text-xl`} onClick={onClick}>{text}</button>
      );
 }
  

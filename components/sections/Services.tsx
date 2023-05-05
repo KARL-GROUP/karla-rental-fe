@@ -57,7 +57,7 @@ const Services = () => {
                 <section className="relative flex flex-col py-16 gap-5">
                 <h3 className="text-white font-bold text-2xl text-center">Our services</h3>
                 <p className="text-primary-gray text-[18px] text-center">Additional related services offered</p>
-                <div className="lg:absolute px-4 mt-10">
+                <div className="lg:absolute px-4 mt-10 lg:mt-0">
                 <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-40 gap-10 lg:relative lg:top-36">
                     {services.map((service, index) => {
                         return (

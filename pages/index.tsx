@@ -15,7 +15,7 @@ export default function Home() {
     <>
       <section className='bg-[#F5F5F5]'>
         {/* <Navbar /> */}
-        {/* <Hero /> */}
+        <Hero />
         <Services />
         <CustomerFavs />
         <HowItWorks />
