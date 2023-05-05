@@ -6,6 +6,7 @@ import Button from "../ui/Button";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import EditModal from "../modals/EditModal";
+import OrderModal from "../modals/OrderModal";
 const OneCar = () => {
 
     const router = useRouter()
@@ -15,6 +16,7 @@ const OneCar = () => {
     const [toEdit, setToEdit] = useState<any>()
     const [isEditing, setIsEditing] = useState(false)
     const [isOrdering, setIsOrdering] = useState(false)
+    const [orderId, setOrderId] = useState()
     useEffect(() => {
         const getCar = async () => {
             try {
@@ -37,6 +39,8 @@ const OneCar = () => {
 
     const handleBook = (id: any) => {
         console.log("id", id)
+        setOrderId(id)
+        setIsOrdering(true)
     }
 
     return (
@@ -130,6 +134,7 @@ const OneCar = () => {
                         :
                         ("")}
                     {isEditing && <EditModal toEdit={toEdit} />}
+                    {isOrdering && <OrderModal id={orderId}/>}
                 </section>
             </SectionWrapper>
             <Footer />

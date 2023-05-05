@@ -60,4 +60,10 @@ export async function getCarsFunc(endpoint : string)  {
     return response;
   }
 
+  export async function orderFunc(endpoint : string, body :any, headers: any)  {
+    let response = await axios.post(`https://karla-rental-be-development.up.railway.app/api/${endpoint}`, body, {
+      headers
+    });
+    return response;
   
+  }

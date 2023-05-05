@@ -6,7 +6,7 @@ import Image from "next/image";
 const Hero = () => {
     return (
         // <SectionWrapper>
-            <section className="pt-44 pl-48 flex justify-between">
+            <section className="pt-44 pl-24 flex justify-between">
                 <div className="w-1/2 px-10 flex flex-col gap-5">
                     <h1 className="text-6xl font-bold text-primary-blue leading-[70px]">Premium <span className="text-black">Car Rental
                         in Rwanda</span> </h1>

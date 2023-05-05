@@ -27,7 +27,7 @@ const Navbar = () => {
 
     return (
         <header className="fixed bg-white z-50 shadow-xl w-full  ]">
-            <nav className="flex justify-between mx-auto max-w-[80rem] h-16 items-center ">
+            <nav className="flex justify-between mx-auto max-w-[75rem] h-16 items-center ">
             <h1 className="uppercase font-bold text-primary-blue text-3xl">karl <span className="text-black">rental</span></h1>
                 <ul className="flex gap-10 h-16 items-center">
                     {navItems.map((navItem, index) => {
