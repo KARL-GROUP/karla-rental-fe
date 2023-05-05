@@ -58,7 +58,7 @@ const Services = () => {
                 <h3 className="text-white font-bold text-2xl text-center">Our services</h3>
                 <p className="text-primary-gray text-[18px] text-center">Additional related services offered</p>
                 <div className="lg:absolute px-4 mt-10 lg:mt-0">
-                <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-40 gap-10 lg:relative lg:top-36">
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:gap-40 gap-10 lg:relative lg:top-36">
                     {services.map((service, index) => {
                         return (
                             <Service key={index} icon={service.icon} title={service.title} description={service.description} />
