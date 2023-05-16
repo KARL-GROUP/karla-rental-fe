@@ -43,7 +43,7 @@ const CustomerFavs = () => {
             <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 mt-10 lg:px-16">
                 {custFav.map((fav, index) => {
                     return(
-                        <Car name={fav.name} price={fav.price} title={fav.title} image={fav.image} suv={fav.suv} automatic={fav.automatic} seats={fav.seats} />
+                        <Car key={index} name={fav.name} price={fav.price} title={fav.title} image={fav.image} suv={fav.suv} automatic={fav.automatic} seats={fav.seats} />
                     )
                 })}
 

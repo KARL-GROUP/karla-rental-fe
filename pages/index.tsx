@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       <section className='bg-[#F5F5F5]'>
-        {/* <Navbar /> */}
+        <Navbar />
         <Hero />
         <Services />
         <CustomerFavs />
