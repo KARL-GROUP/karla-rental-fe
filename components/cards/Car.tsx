@@ -13,13 +13,13 @@ import Button from "../ui/Button";
 
 const Car = ({ name, price, title, image, suv, automatic, seats }: Props) => {
     return (
-        <div className="bg-white rounded-xl shadow-xl px-5 py-5 flex flex-col gap-2">
+        <div className="bg-white rounded-xl shadow-xl px-5 py-5 flex flex-col gap-2 h-[55vh]">
             <div className="flex justify-between">
                 <p className="font-bold text-[18px]">{name}</p>
                 <p className="font-bold text-primary-blue text-[18px]">{price}<span className="text-black font-normal">/day</span></p>
             </div>
-            <p className="text-[#939393] text-[16px]">{title}</p>
-            <img src={image} alt="car" />
+            {/* <p className="text-[#939393] text-[16px]">{title}</p> */}
+            <img className= "h-[25vh]" src={image} alt="car" />
             <div className="flex justify-between py-3">
                 <div className="flex items-center gap-2">
                     <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">

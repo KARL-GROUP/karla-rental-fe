@@ -38,7 +38,6 @@ const OneCar = () => {
     }
 
     const handleBook = (id: any) => {
-        console.log("id", id)
         setOrderId(id)
         setIsOrdering(true)
     }
@@ -63,14 +62,6 @@ const OneCar = () => {
                                 </div>
                             </div>
                             <div className="flex flex-col gap-10 w-2/5">
-                                <button onClick={() => handleEdit(car)}>
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M21.125 8.15625L15.8125 2.90625L17.5625 1.15625C18.0417 0.677083 18.6304 0.4375 19.3288 0.4375C20.0263 0.4375 20.6146 0.677083 21.0938 1.15625L22.8438 2.90625C23.3229 3.38542 23.5729 3.96375 23.5938 4.64125C23.6146 5.31792 23.3854 5.89583 22.9062 6.375L21.125 8.15625ZM19.3125 10L6.0625 23.25H0.75V17.9375L14 4.6875L19.3125 10Z" fill="black" />
-                                    </svg>
-                                    edit
-                                </button>
-
-
                                 <div className="flex flex-col gap-3">
                                     <h1 className="font-bold text-2xl">{car.brand}</h1>
                                     <p className="text-[#242424]">{car.description}</p>
